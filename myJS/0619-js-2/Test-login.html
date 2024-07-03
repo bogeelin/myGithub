@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 判定帳號密碼有無輸入正確 -->
+    <!-- 正確帳號:abc，密碼:1234 -->
+    <script>
+        let uid = 'abc';
+        let upw = '1234';
+
+        //比對運算子 : ==(等於); !=(不等於)
+        // (變數or值) (比對運算子) (變數or值)
+        // if (uid=='abc') {
+        // console.log('帳號輸入正確');
+        // } else{
+        //     console.log('帳號輸入錯誤');
+        // }
+        // if (upw=='1234') {
+        //     console.log('密碼輸入正確');
+        // }else{
+        //     console.log('密碼輸入錯誤');
+        // }
+
+        //多層判斷檢查
+        if (uid == 'abc' && upw == '1234') {
+            console.log('帳密輸入正確');
+        } else if (uid == 'abc' && upw != '1234') {
+            console.log('密碼輸入錯誤');
+        } else if (uid != 'abc' && upw == '1234') {
+            console.log('帳號輸入錯誤');
+        } else {
+            console.log('帳密輸入錯誤');
+        }
+
+        //單層判斷檢查
+        if (uid == 'abc' && upw == '1234') {
+            console.log('帳密輸入正確');
+        }
+        if (uid == 'abc' && upw != '1234') {
+            console.log('密碼輸入錯誤');
+        }
+        if (uid != 'abc' && upw == '1234') {
+            console.log('帳號輸入錯誤');
+        }
+        if (uid != 'abc' && upw != '1234') {
+            console.log('帳密輸入錯誤');
+        }
+        
+    </script>
+</body>
+
+</html>

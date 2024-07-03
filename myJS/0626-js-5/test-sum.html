@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 彈出輸入視窗 : 起始值&結束值
+        // 算出奇數和&偶數和
+
+        let a = prompt('請輸入運算起始值');
+        a = Number(a);
+        let b = prompt('請輸入運算結束值');
+        b = Number(b);
+        let tot1 = 0; //奇數和
+        let tot2 = 0; //偶數和
+
+        if (a > b) {
+            window.alert('起始值不能大於結束值，已自動調換兩數值');
+            let temp=a;  //a(大值)暫時給temp
+            a=b;         //b(小值)暫時給a(空)
+            b=temp      //temp存的a(大值)暫時給b(空)
+            for (let i = a; i <= b; i++) {
+                if (i % 2 === 1) {
+                    tot1 += +i;
+                } else {
+                    tot2 += i;
+                }
+            }
+        } else {
+            for (let i = a; i <= b; i++) {
+                if (i % 2 === 1) {
+                    tot1 += +i;
+                } else {
+                    tot2 += i;
+                }
+            }
+        }
+        document.write(`${a}-${b}的奇數和為${tot1}<br>`);
+        document.write(`${a}-${b}的偶數和為${tot2}<br>`);
+
+    </script>
+</body>
+
+</html>

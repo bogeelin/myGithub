@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 檢查四季 :以if else操作
+        //== : 左右兩邊資料形態不用完全相同即可辨識(較不嚴謹)
+        //=== : 左右兩邊資料形態必須完全相同才可辨識(較嚴謹)
+        let a = 1;
+        //建立變數給值
+        if (a === 1) {
+            console.log('春天');
+        } else if (a === 2) {
+            console.log('夏天');
+        } else if (a === 3) {
+            console.log('秋天');
+        } else if (a === 4) {
+            console.log('冬天');
+        } else {
+            //以上條件皆非
+            console.log('季節代號輸入錯誤(1-4)');
+        }
+
+        // 檢查四季 :以switch-case操作
+        // break 可使用時機 : 1. switch; 2.迴圈內
+        let b = 2
+        switch (b) {
+            case 1:
+                console.log('春天');
+                break;
+            case 2:
+                console.log('夏天');
+                break;
+            case 3:
+                console.log('秋天');
+                break;
+            case 4:
+                console.log('冬天');
+                break;
+            default:
+                //以上條件皆非
+                console.log('季節代號輸入錯誤(1-4)');
+        }
+    </script>
+</body>
+
+</html>

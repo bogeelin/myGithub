@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用輸入視窗prompt
+        //輸入分數
+        //1.檢查是否及格
+        //2.檢查是否為有效分數範圍
+        //3.檢查是否按了取消
+        let score;
+        score = window.prompt('請輸入分數', '60');
+        //是否按了取消
+        if (score == null) {
+            window.alert('您沒有輸入分數');
+        } else {
+            if (score == '') {
+                window.alert('分數不能為空白');
+            } else {
+                if (isNaN(score )) {
+                    window.alert('您的輸入無效');
+                } else {
+                    //轉換字串為數值
+                    score = Number(score);
+                    if (score < 0 || score > 100) {
+                        window.alert('無效分數範圍(1-100)');
+                    } else {
+                        if (score <= 59) {
+                            window.alert('分數不及格');
+                        } else {
+                            window.alert('您的分數為' + score);
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

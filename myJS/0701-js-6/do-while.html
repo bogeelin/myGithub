@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用do-while做 1-10 合計
+        //先執行，再檢查
+        //第一次執行時不會檢查
+        //第二次開始執行前會檢查
+        /*
+        do {
+        ...
+        } while(執行迴圈的條件)         
+        */
+        //合計變數
+        let s3 = 0;
+        let i = 1;
+        do {
+            s3 = s3 + i;
+            i++;
+        } while (i <= 10)
+        console.log(`1+2+3+...+10=${s3}`);
+    </script>
+</body>
+
+</html>

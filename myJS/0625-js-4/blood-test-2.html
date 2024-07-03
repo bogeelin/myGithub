@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let blood
+        blood = prompt('請輸入您的血型');
+
+
+
+        if (blood == null) {
+            window.alert('您沒有輸入血型');
+        } else {
+            let upperblood = blood.toUpperCase();
+            switch (upperblood.trim()) {
+                case '':
+                    window.alert('血型不能為空白')
+                    break;
+                case 'A':
+                    window.alert('您是A型');
+                    break;
+                case 'B':
+                    window.alert('您是B型');
+                    break;
+                case 'O':
+                    window.alert('您是O型');
+                    break;
+                case 'AB':
+                    window.alert('您是AB型');
+                    break;
+                default:
+                    window.alert('輸入錯誤');
+                    break;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用迴圈的前提
+        // 1. 連續執行一樣的程式敘述(ex. 重複的特效動畫)
+        // 2. 有規律性
+        // for()  已知執行次數
+        // for(參數1;參數2;參數3)
+        // 參數1 : 迴圈計數器變數起始直
+        // 參數2 : 執行迴圈的條件
+        // 參數3 : 每次執行迴圈後，計數器變數的增減值
+
+        // 顯示連續5次'hello'+換行
+        /*
+        document.write('hello<br>')
+        document.write('hello<br>')
+        document.write('hello<br>')
+        document.write('hello<br>')
+        document.write('hello<br>')
+        */
+        //可用迴圈改寫
+
+        for (let i = 1; i <= 5; i++) {
+            document.write('hello<br>');
+        }
+        //建立水平線
+        document.write('<hr>');
+
+        // TEST : 顯示數字10-15
+        //方法 1
+        for (let i = 10; i <= 15; i++) {
+            document.write(i + ',');
+        }
+        document.write('<hr>');
+        //方法 2
+        for (let i = 1; i <= 6; i++) {
+            document.write(i + 9 + ',');
+        }
+        document.write('<hr>');
+        //方法 3 : 使用迴圈外的變數顯示數字
+        let a = 10
+        for (let i = 1; i <= 6; i++) {
+            document.write(a + ',');
+            a++;
+        }
+        document.write('<hr>');
+        //方法 4 : 使用迴圈外的變數顯示數字
+        let b = 9
+        for (let i = 1; i <= 6; i++) {
+            document.write((b = b + 1) + ',');
+        }
+        document.write('<hr>');
+        //方法 5 : 使用迴圈外的變數顯示數字
+        let c = 10
+        for (let i = 1; i <= 6; i++) {
+            document.write(c++ + ',');   //c++ : 先寫出c,再+1
+        }
+        document.write('<hr>');
+        //方法 6 : 使用迴圈外的變數顯示數字
+        let d = 9
+        for (let i = 1; i <= 6; i++) {
+            document.write(++d + ',');   //++d : 先+1,再寫出d
+        }
+        document.write('<hr>');
+
+        // TEST : 顯示1-10的奇數，用空白隔開
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 === 1) {
+                document.write(i + ' ');
+            }
+        }
+        document.write('<hr>');
+
+        // TEST : 顯示1-10的偶數，用逗號隔開且最後一個逗號取消
+        //方法1 : 先顯示i，再判斷若非最後一個值，顯示逗號
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 === 0) {
+                document.write(i);
+                if (i != 10) {
+                    document.write(',');
+                }
+            }
+        }
+        document.write('<hr>');
+        //方法2 : 先判斷是否是最後一個值，不是則顯示逗號
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 === 0) {
+                if (i != 10) {
+                    document.write(i + ',');
+                } else {
+                    document.write(i);
+                }
+            }
+        } 
+    </script>
+</body>
+
+</html>

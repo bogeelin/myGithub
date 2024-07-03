@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let blood
+        blood = prompt('請輸入您的血型');
+
+        //也可以直接在prompt中改寫 
+        // blood = prompt('請輸入您的血型'.trim())
+        // else-if
+        if (blood == null) {
+            window.alert('您沒有輸入血型');
+        } else {
+            blood = blood.trim();   //去除多餘空白後，再重新指派回blood變數
+            if (blood.trim() == '') {   //去除空白後的結果是沒有內容的
+                window.alert('血型不能為空白');
+            } else if (blood == 'A' || blood == 'a') {
+                window.alert('您是A型');
+            } else if (blood == 'B' || blood == 'b') {
+                window.alert('您是B型');
+            } else if (blood == 'O' || blood == 'o') {
+                window.alert('您是O型');
+            } else if (blood == 'AB' || blood == 'Ab' || blood == 'aB' || blood == 'ab') {
+                window.alert('您是AB型');
+            } else {
+                window.alert('輸入錯誤');
+            }
+        }
+    </script>
+</body>
+
+</html>

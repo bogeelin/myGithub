@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 駝峰式命名 -->
+    <!-- 大駝峰:每個單字字首大寫 -->
+    <!-- 小駝峰:第二個單字自首才大寫 -->
+
+    <!-- 字串變數 -->
+    <script>
+        let petName = '蛤吉';
+        let petAge = 3;
+        console.log(`寵物名字:${petName}`);
+        console.log(`寵物年紀:${petAge}`);
+
+        //取得資料型態: typeof(變數名)
+        console.log(typeof (petAge));
+
+        petAge = '3';
+        console.log(typeof (petAge));
+        //petAge未轉換為number時的計算
+        console.log(`寵物5年後年齡:${petAge + 5}`);
+        //把petAge暫時轉換為number來計算 (petAge仍為string)
+        console.log(`寵物5年後年齡:${Number(petAge) + 5}`);
+        //要把petAge"真正"轉換為number，需重新指派
+        petAge = Number(petAge);
+        console.log(`寵物5年後年齡:${petAge + 5}`)
+
+        // 浮點數(帶有小數點的資料)
+        let pi = 3.14;
+        let r = 6;
+        let area = pi * r * r;
+
+        console.log(area);
+        //number無條件捨去到整數位
+        console.log(parseInt(area));
+        //number使用toFixed計算(括號內為"四捨五入取到小數點後第幾位數")
+        //number使用後會轉為string
+        console.log(area.toFixed(2));
+        //若要再次運算，必須用Number()轉換
+        console.log(Number(area.toFixed(2)) + 1);
+
+
+    </script>
+</body>
+
+</html>

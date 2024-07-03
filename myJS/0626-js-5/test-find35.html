@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用"一個"迴圈找出1-10中，3的倍數及5的倍數(迴圈結束後才顯示結果)
+        //1-10中3的倍數列出&下一行顯示總和
+        //1-10中5的倍數列出&下一行顯示總和
+        let str3 = ' '; //3的倍數之保存
+        let str3a = ' '; //3的倍數之保存(帶有'+')
+        let tot3 = 0;//3倍數的總和
+
+        let str5 = ' '; //5的倍數之保存
+        let str5b = ' '; //5的倍數之保存(帶有'+')
+        let tot5 = 0;//5的倍數的總和
+
+        for (let i = 1; i <= 10; i++) {
+            if (i % 3 === 0) {
+                str3 = str3 + i + ' ';
+                //簡化 : str3 += i+'';
+                str3a = str3a + i;
+                if (i != 9) {
+                    str3a = str3a + '+'; //不是9時才加上'+''
+                }
+                tot3 = tot3 + i
+            } else if (i % 5 === 0) {
+                str5 = str5 + i + ' ';
+                //簡化 : str5 += i+'';
+                str5b = str5b + i;
+                if (i != 10) {
+                    str5b = str5b + '+'; //不是10時才加上'+''
+                }
+                tot5 = tot5 + i
+            }
+        }
+
+        //等號兩邊變數相同，可簡寫(ex.a=a+1 改 a+=1 ； b=b-1 改 b-=1) 
+
+        //字串字面值寫法
+        document.write(`1-10中3的倍數:${str3}<br>`);
+        document.write(`1-10中3的倍數的總和:${str3a}=${tot3}<br>`)
+        document.write(`1-10中5的倍數:${str5}<br>`);
+        document.write(`1-10中5的倍數的總和:${str5b}=${tot5}`)
+        //一般串接方式
+        //document.write('1-10中3的倍數:' + str3 + '<br>' + '1-10中5的倍數:' + str5);
+
+    </script>
+</body>
+
+</html>

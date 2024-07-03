@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //請顯示1-100中，5的倍數值並加總
+        //直到合計大於50就結束迴圈
+
+        //i=5,s=10
+        //i=10,s=15
+        //i=15,s=30
+        //i=20,s=50
+        //i=25=75
+
+        //for
+        console.log('----for----')
+        let tot = 0;
+        for (i = 1; i <= 100; i++) {
+            if (i % 5 === 0) {
+                tot += i;
+                console.log(`i=${i}，tot=${tot}`);
+            } if (tot > 50) {  //檢查tot是否大於50
+                break;
+            }
+        }
+        //while
+        console.log('----while----')
+        tot = 0; //沿用for迴圈時的tot變數
+        let i = 1;
+        while (i <= 100) {
+            if (i % 5 === 0) {
+                tot += i;
+                console.log(`i=${i}，tot=${tot}`);
+                if (tot > 50) {
+                    break;
+                }
+            }
+            i++;
+        }
+
+        //do-while
+    </script>
+</body>
+
+</html>
