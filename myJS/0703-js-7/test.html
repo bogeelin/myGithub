@@ -42,6 +42,10 @@
                     alert('無效輸入，請輸入數字');
                     continue;
                 }
+                if(score<0 || score>100) {
+                    alert('無效輸入，請輸入0-100');
+                    continue;
+                }
                 count++;
                 total += score;
                 if (score >= 60) {
