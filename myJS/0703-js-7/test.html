@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        請輸入成績N次，直到輸入 '-1' 或 '取消' 就結束輸入
+        
+        第1次分數:90
+        第2次分數:50
+        第3次分數:60
+        ----------------
+        及格人數:2人
+        不及格人數:1人
+        總分:200分
+        總平均:66.67分
+        */
+        function getScores() {
+            let scores = '';
+            let input;
+            let count = 0;
+            let total = 0;
+            let passCount = 0;
+            let failCount = 0;
+
+            while (true) {
+                input = prompt('請輸入分數(按取消或輸入-1時結束)');
+                if (input == null || input == '-1') {
+                    break;
+                } else if (input.trim() == '') {
+                    alert('輸入不能為空白，請重新輸入');
+                    continue;
+                }
+                let score = Number(input.trim());
+                if (isNaN(score)) {
+                    alert('無效輸入，請輸入數字');
+                    continue;
+                }
+                count++;
+                total += score;
+                if (score >= 60) {
+                    passCount++;
+                } else {
+                    failCount++;
+                }
+                scores = scores + `第${count}次分數：${score}分<br>`;
+            }
+            return { scores, count, total, passCount, failCount };
+        }
+
+        function printResult(scores, count, total, passCount, failCount) {
+            if (count > 0) {
+                document.write(scores);
+
+                let average = total / count;
+                document.write(`---------------------<br>`);
+                document.write(`及格人數：${passCount}<br>`);
+                document.write(`不及格人數：${failCount}<br>`);
+                document.write(`總分：${total}分<br>`);
+                document.write(`平均分數：${average.toFixed(2)}分`);
+            } else {
+                document.write('您沒有輸入任何分數');
+            }
+        }
+
+        let result = getScores();
+        printResult(result.scores, result.count, result.total, result.passCount, result.failCount);
+    </script>
+</body>
+
+</html>
