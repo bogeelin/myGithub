@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    background-image: url(./images/bg.jpg);
+    font-size: 12pt;
+}
+
+img {
+    display: block;
+}
+
+.box {
+    width: 1000px;
+    /* 設定區塊尺寸，除了0之外，須加上單位 */
+    margin: 0 auto;
+    /* 間距自動偵測(auto)須搭配寬度(width) */
+}
+iframe{
+    display: block;  /*表單需先轉成display block，才可用margin調整位置*/
+    margin: 0 auto;
+}
+.btn {
+    float: left;
+    /* 用浮動區塊(float)取代原先使用的display block */
+}
+
+.col {
+    font-size: 14pt;
+    float: left;
+    width: 446px; /*文字會自動延展，要另外設定*/
+    border: dotted 2px rgb(118, 69, 6);
+    margin: 10px;
+    padding: 15px;
+}
+
+.col span {
+color: brown;
+}
+hr {
+    border: #995d33 1px solid;
+}
+address {
+    font-style: normal;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 150%;
+    /* 與font-size: 1.5em */
+}
+
+p {
+    font-size: 1em;
+    /* <p>預設font-size: 1em */
+}
+
+.footer {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: dotted rgb(118, 69, 6);
+    padding: 20px 0;
+}
