@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //設計一個函式，能夠四則運算
+        function calc(a, b, c) {
+            if (c == '+') {  //處理四則運算的結果
+                //5+3=8
+                document.write(`${a}+${b}=${a + b}`);
+            } else if (c == '-') {
+                //5+3=8
+                document.write(`${a}-${b}=${a - b}`);
+            } else if (c == '*') {
+                //5+3=8
+                document.write(`${a}*${b}=${a * b}`);
+            } else if (c == '/') {
+                //5+3=8
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else {
+                document.write('運算符號不存在');
+            }
+        }
+        //使用輸入視窗產生任意二術與運算式符號，最後再呼叫函式
+        //字串轉數值 : Number()
+        //排除非數字(isNan)、取消狀況(null)、多餘空白(字串.trim())
+
+        let inputA = prompt('請輸入任意數值1');
+        let inputB = prompt('請輸入任意數值2');
+        let inputC = prompt('請輸入一個四則運算符號(+,-,*,/)');
+        if (inputA == null || inputB == null || inputC == null) {
+            window.alert('您直接按了取消，無法運算');
+        } else if (isNaN(inputA) || isNaN(inputB)) {
+            document.write('輸入的並非數字，無法運算');
+        } else {
+            inputA = Number(inputA.trim());
+            inputB = Number(inputB.trim());
+
+            //最後呼叫函式
+            calc(inputA, inputB, inputC);
+        }
+    </script>
+</body>
+
+</html>
