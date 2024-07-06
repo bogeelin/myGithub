@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let bingoNum = 99;
+
+        for (let i = 1; i <= 3; i++) {
+            let guess = prompt("請開始猜數字(1-100)，有三次機會!");
+            document.write(`第${i}次 : ${guess}  `);
+            if (guess == null) {
+                window.alert('您直接按了取消，請重新開始');
+                break;
+            } else {
+                if (guess == '') {
+                    document.write('數字不能為空白' + '<br>');
+                } else {
+                    let guessNum = Number(guess.trim());
+                    if (guessNum < 1 || guessNum > 100) {
+                        document.write('無效數字，數字區間為 1-100' + '<br>');
+                    } else if (guessNum == 99) {
+                        document.write('答對了!<br>');
+                        break;
+                    } else if (guessNum != 99) {
+                        document.write('猜錯了!<br>');
+                        if (i === 3) {
+                            document.write('<br>挑戰失敗!');
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
