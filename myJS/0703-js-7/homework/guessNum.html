@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='result'></div>
+    <script>
+        // 猜數字：直到猜對才結束
+        // 用亂數產生一個值：60
+        // 輸入資訊顯示console.log()
+        // 第1次：50 => 太小了（提示：50-100）
+        // 第2次：90 => 太大了（提示：50-90）
+        // 第3次：80 => 太大了（提示：50-80）
+        // 第4次：55 => 太小了（提示：55-80）
+        // 第5次：60 => 猜對了
+
+        // console.log(Math.floor(Math.random()*100)); // 回傳 0 ~ 99
+        // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
+        // 產生亂數給變數bingoNum
+        let bingoNum = Math.floor(Math.random() * 100) + 1;
+        console.log(bingoNum);
+
+        let input;
+        let minRange = 1;
+        let maxRange = 100;
+        let count = 0;
+        let result = '';
+
+        while (true) {
+            input = prompt('請輸入數字');
+
+            if (input == null) {
+                alert('您按了取消，若要開始新一輪，請重新整理頁面');
+                break;
+            } else if (input.trim() == '') {
+                alert('輸入不能為空白，請重新輸入');
+                continue;
+            }
+
+            let guess = Number(input.trim());
+            if (isNaN(guess)) {
+                alert('無效輸入，請輸入數字1-100');
+                continue;
+            }
+            if (guess < 1 || guess > 100) {
+                alert('無效輸入，請輸入1-100');
+                continue;
+            }
+            if (guess % 1 != 0) {
+                alert('無效輸入，請輸入整數');
+                continue;
+            }
+            count++;
+
+            let message = `第${count}次：${guess} =>`;
+
+            if (guess < bingoNum) {
+                message += `太小了，提示：${guess} - ${maxRange}<br>`;
+                alert(`太小了，提示：${guess} - ${maxRange}`);
+                minRange = guess;
+            }
+            if (guess > bingoNum) {
+                message += `太大了，提示：${minRange} - ${guess}<br>`;
+                alert(`太大了，提示：${minRange} - ${guess}`);
+                maxRange = guess;
+            }
+            if (guess == bingoNum) {
+                message += `猜對了！<br>`;
+                result += message;
+                document.getElementById('result').innerHTML = result;
+                break;
+            }
+            result += message;
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
