@@ -28,7 +28,7 @@ ol {
     list-style: none;
 }
 
-img {
+svg {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -41,49 +41,58 @@ a {
     color: #ffffff;
 }
 
-#topbar { 
+#topbar {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    padding: 7px;    
+    padding: 38px;
 }
+
 .logo {
-    width: 10px;
     position: fixed;
-    left: 100px;
+    width: 270px;
+    margin-left: 105px;
 }
-.navigation{
+
+.navigation {
     display: flex;
     align-items: center;
 }
-.navigation .icon{
+
+.navigation .icon {
     display: flex;
     align-items: center;
     position: fixed;
     right: 150px;
     order: 3;
 }
+
 .navigation .icon a {
     width: 40px;
     height: 40px;
     margin-left: 10px;
     transition: all .35s ease-in-out;
 }
-.icon-fb{
-    background-image: url(../0702-web/image/icon-fb.svg); 
+
+.icon-fb {
+    background-image: url(./image/icon-fb.svg);
 }
-.icon-fb:hover{
+
+.icon-fb:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
-.icon-ig{
-    background-image: url(../0702-web/image/icon-ig.svg);
+
+.icon-ig {
+    background-image: url(./image/icon-ig.svg);
 }
-.icon-ig:hover{
+
+.icon-ig:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
-.navigation .menu{
+
+.navigation .menu {
     display: flex;
     align-items: center;
     margin: 15px 0;
@@ -91,13 +100,14 @@ a {
     right: 280px;
 }
 
-.navigation .menu a{
+.navigation .menu a {
     font-size: 1rem;
-    margin: 0 25px ;
-    border-bottom:solid 2px transparent;
+    margin: 0 25px;
+    border-bottom: solid 2px transparent;
 }
-.navigation .menu a:hover{
-    border-bottom:solid 2px;
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px;
     color: #cfa551da;
     transition: .35s ease-in-out;
 }
