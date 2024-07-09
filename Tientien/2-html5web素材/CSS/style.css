@@ -1,8 +1,11 @@
 @charset "UTF-8";
 /*UTF-8 一定要在第一行*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* google fonts 一定要在第二行 */
 @font-face {
-    font-family: ;
-    src: url();
+    font-family: LemonMilk;
+    src: url(../fonts/LemonMilk/LemonMilk.otf);
 }
 
 * {
@@ -54,81 +57,170 @@ a {
     text-decoration: none;
     color: #444;
 }
+
 /* 共用區 */
-.btn-s{
+.btn-s {
     background-color: white;
-    width: auto!important;
+    width: auto !important;
     height: 40px;
     line-height: 38px;
     padding: 0 30px;
-    border-radius: 99px;  /*圓角:height除2*/
+    border-radius: 99px;
+    /*圓角:height除2*/
     transition: .35s ease-in-out;
 }
-.btn-s:hover{
+
+.btn-s:hover {
     background-color: #444;
     color: white;
 }
 
 /* 頁首區 */
 #topbar {
-    display: flex;    /*預設主軸水平*/
-    justify-content: space-between;    /*主軸(水平)均分貼齊頭*/
-    align-items: center; /*副軸(垂直)置中*/
+    display: flex;
+    /*預設主軸水平*/
+    justify-content: space-between;
+    /*主軸(水平)均分貼齊頭*/
+    align-items: center;
+    /*副軸(垂直)置中*/
     padding: 30px;
-    
+
 }
+
 .logo {
     width: 65px;
 }
-.navigation{
+
+.navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-.navigation .icon{
+
+.navigation .icon {
     display: flex;
 }
+
 .navigation .icon a {
     width: 40px;
     height: 40px;
     margin-left: 10px;
     transition: all .35s ease-in-out;
 }
-.icon-fb{
-    background-image: url(../images/icon-fb.svg); /*只有svg圖會自動等比例縮放，其他圖檔會原始尺寸匯入*/
+
+.icon-fb {
+    background-image: url(../images/icon-fb.svg);
+    /*只有svg圖會自動等比例縮放，其他圖檔會原始尺寸匯入*/
 }
-.icon-fb:hover{  /*滑鼠放上去後的特效*/
+
+.icon-fb:hover {
+    /*滑鼠放上去後的特效*/
     background-image: url(../images/icon-fb-hover.svg);
 }
-.icon-ig{
+
+.icon-ig {
     background-image: url(../images/icon-ig.svg);
 }
-.icon-ig:hover{
+
+.icon-ig:hover {
     background-image: url(../images/icon-ig-hover.svg);
 }
-.icon-line{
+
+.icon-line {
     background-image: url(../images/icon-line.svg);
 }
-.icon-line:hover{
+
+.icon-line:hover {
     background-image: url(../images/icon-line-hover.svg);
 }
-.navigation .menu{
+
+.navigation .menu {
     display: flex;
     margin: 15px 0;
 }
-.navigation .menu li{
+
+.navigation .menu li {
     border-right: solid 1px;
 }
-.navigation .menu li:last-child{
-    border:none;
+
+.navigation .menu li:last-child {
+    border: none;
 }
-.navigation .menu a{
+
+.navigation .menu a {
     font-size: .9rem;
-    line-height: 1;  /*原本設定1.5倍行高，設定line-height調整分隔線長度*/
-    margin: 0 20px ;
-    border-bottom:solid 2px transparent;
+    line-height: 1;
+    /*原本設定1.5倍行高，設定line-height調整分隔線長度*/
+    margin: 0 20px;
+    border-bottom: solid 2px transparent;
 }
-.navigation .menu a:hover{
-    border-bottom:solid 2px;
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px;
     transition: .35s ease-in-out;
+}
+
+/* 主頁共用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h2 {
+    font-family: LemonMilk, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    border-bottom: 2px solid #444;
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: 1.2rem;
+    letter-spacing: .2rem;
+    line-height: 3rem;
+}
+
+/* 聯絡我們 */
+#contact{
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    background-position: center center ;
+}
+#form--contact {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+#form--contact label {
+    font-size: .85rem;
+    line-height: 2;
+    margin-top: 1rem;
+}
+#form--contact input, #form--contact textarea{
+    padding: 6px;
+    color: #b18f8f;
+    font-weight: 600;
+}
+#form--contact input::placeholder, #form--contact textarea::placeholder{
+    padding: .1rem;
+    color: #b18f8f;
+    font-weight: 400;
+}
+#form--contact small{
+    padding: .8rem;
+    color: #494141;
+    padding: 5px;
 }

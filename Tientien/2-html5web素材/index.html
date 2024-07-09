@@ -60,9 +60,24 @@
     <!-- 內容區 -->
     <main>
         <section id="contact">
-            <header>
-
+            <header class="title">
+                <h2>CONTACT</h2>
+                <h3>聯絡我們</h3>
             </header>
+            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
+                <label for="username">姓名 : </label>
+                <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete>
+
+                <label for="tel">聯絡電話 : </label>
+                <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入聯絡電話">
+
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required>
+
+                <label for="message">留言 : </label>
+                <textarea name="message" id="message" title="留言欄位" rows="10" cols="50"></textarea>
+            <small>此表單為練習作品，不具有蒐集資料的功能。</small>
+            </form>
         </section>
     </main>
     <!-- 頁尾區 -->
