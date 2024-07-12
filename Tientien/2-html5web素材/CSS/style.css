@@ -24,7 +24,7 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
-    background-color: ;
+    background-color:
 }
 
 /* 重置標題 */
@@ -84,7 +84,7 @@ a {
     align-items: center;
     /*副軸(垂直)置中*/
     padding: 30px;
-
+    background-color: rgb(232, 209, 209);
 }
 
 .logo {
@@ -137,6 +137,9 @@ a {
 .navigation .menu {
     display: flex;
     margin: 15px 0;
+    /*控制父層的外距*/
+    padding: 10px;
+    border-radius: 99px;
 }
 
 .navigation .menu li {
@@ -193,14 +196,16 @@ section {
 }
 
 /* 聯絡我們 */
-#contact{
+#contact {
     background-image: url(../images/bg_contact.jpg);
     background-size: cover;
-    background-position: center center ;
+    background-position: center center;
 }
+
 #form--contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*主軸垂直*/
+    align-items: center;  /*副軸水平置中*/
     width: 35%;
 }
 
@@ -208,19 +213,126 @@ section {
     font-size: .85rem;
     line-height: 2;
     margin-top: 1rem;
+    width: 100%;
 }
-#form--contact input, #form--contact textarea{
+
+#form--contact input,
+#form--contact textarea,
+#topbar .menu {
+    /*玻璃擬態效果*/
+    background-image: linear-gradient(150deg, rgba(234, 232, 232, 0.463), rgba(180, 161, 161, 0.282));
+
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .4), inset -1px -1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Noto Sans TC', 'sans serif';
     padding: 6px;
-    color: #b18f8f;
+    color: #876e6e;
     font-weight: 600;
+    /*取消表單元件的預設值*/
+    background-color: transparent;
+    border: none;
 }
-#form--contact input::placeholder, #form--contact textarea::placeholder{
+
+#form--contact input:focus,
+#form--contact textarea:focus {
+    /*修改focus預設樣式*/
+    outline: 1px solid #aa9898;
+}
+
+#form--contact input::placeholder,
+#form--contact textarea::placeholder {
     padding: .1rem;
-    color: #b18f8f;
+    color: #aa9898;
     font-weight: 400;
 }
-#form--contact small{
-    padding: .8rem;
-    color: #494141;
-    padding: 5px;
+
+#form--contact small {
+    width: 100%;
+    font-size: .8rem;
+    color: #786f6f;
+    padding: 8px 5px;
+}
+
+/*動態按鈕*/
+#btn__contact--submit {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    opacity: 1;
+    background-color: none;
+    border: 1px solid rgba(104, 104, 104, 0.6);
+}
+
+#btn__contact--submit span {
+    color: #714836;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+#btn__contact--submit:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+#btn__contact--submit:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
 }
