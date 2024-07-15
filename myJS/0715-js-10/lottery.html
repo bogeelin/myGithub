@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getBingoNum() {
+            let bingoNum = [];
+            let minNum = 1;
+            let maxNum = 49;
+            let count = 0;
+
+            while (bingoNum.length < 6) {
+                let num = Math.floor(Math.random() * 100);
+                let result = bingoNum.includes(num);
+                if (result == false) {
+                    if (num <= maxNum && num >= minNum) {
+                        bingoNum.push(num);
+                        count++;
+                    }
+                }
+            }
+            bingoNum.sort((a, b) => {
+                return a - b;
+            });
+            console.log('大樂透號碼:' + bingoNum);
+        }
+        getBingoNum();
+        
+        // 特別號
+        let specialNum = [];
+        let minNum = 1;
+        let maxNum = 49;
+        while (specialNum.length < 1) {
+            let sNum = Math.floor(Math.random() * 100);
+            if (sNum <= maxNum && sNum >= minNum) {
+                specialNum.push(sNum);
+            }
+        }
+        console.log('特別號碼:' + specialNum);
+    </script>
+</body>
+
+</html>
