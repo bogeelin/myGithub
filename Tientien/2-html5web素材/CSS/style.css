@@ -77,6 +77,9 @@ a {
 
 /* 頁首區 */
 #topbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     display: flex;
     /*預設主軸水平*/
     justify-content: space-between;
@@ -84,7 +87,7 @@ a {
     align-items: center;
     /*副軸(垂直)置中*/
     padding: 30px;
-    background-color: rgb(232, 209, 209);
+    /* background-color: rgb(232, 209, 209); */
 }
 
 .logo {
@@ -176,6 +179,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .title h2 {
@@ -195,17 +199,55 @@ section {
     line-height: 3rem;
 }
 
+.box__list {
+    width: 80%;
+    display: flex;
+}
+
+.box__list .item {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.box__list h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.box__list p {
+    font-size: .9rem;
+    text-align: justify; /*齊行，建議中文內容時使用，英文是單字間距均分，建議不使用*/
+}
+
 /* 聯絡我們 */
 #contact {
+    position: relative;
+    overflow: clip;
     background-image: url(../images/bg_contact.jpg);
     background-size: cover;
     background-position: center center;
 }
 
+.flower_r {
+    position: absolute;
+    left: -50px;
+    bottom: -30px;
+    transform: rotate(40deg);
+}
+
+.flower_w {
+    position: absolute;
+    right: -50px;
+    top: 70px;
+    transform: rotate(-30deg);
+}
+
 #form--contact {
     display: flex;
-    flex-direction: column; /*主軸垂直*/
-    align-items: center;  /*副軸水平置中*/
+    flex-direction: column;
+    /*主軸垂直*/
+    align-items: center;
+    /*副軸水平置中*/
     width: 35%;
 }
 
@@ -218,7 +260,8 @@ section {
 
 #form--contact input,
 #form--contact textarea,
-#topbar .menu {
+#topbar .menu,
+#btn__contact--submit {
     /*玻璃擬態效果*/
     background-image: linear-gradient(150deg, rgba(234, 232, 232, 0.463), rgba(180, 161, 161, 0.282));
 
@@ -261,27 +304,30 @@ section {
 
 /*動態按鈕*/
 #btn__contact--submit {
-    position: relative;
+    /* position: relative;
     outline: none;
-    text-decoration: none;
+    text-decoration: none; <= 取消文字裝飾底線 */
     border-radius: 50px;
+    /* 定義起始位置 */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* 指標樣式 */
     cursor: pointer;
-    text-transform: uppercase;
+    /* text-transform: uppercase; <= 設定字母大寫*/
     height: 60px;
     width: 210px;
     opacity: 1;
-    background-color: none;
-    border: 1px solid rgba(104, 104, 104, 0.6);
+    background-color: transparent;
+    border: 1px solid rgb(154, 128, 128);
 }
 
 #btn__contact--submit span {
-    color: #714836;
+    color: #5c3e30;
     font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.7px;
+    letter-spacing: 1rem;
+    padding-left: 1rem;
 }
 
 #btn__contact--submit:hover {
