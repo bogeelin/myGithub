@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrNum = [];
+        // 方法一 : for
+        /*for (i = 0; i < 6; i++) {
+            let lotNum = Math.floor(Math.random() * 49) + 1;
+            if (arrNum.indexOf(lotNum) == -1) {  //檢查陣列中是否有重複
+                arrNum.push(lotNum);
+            }
+            else {
+                console.log(`在編號${i}位置，${lotNum}重複了`);
+                i = i - 1;  //有重複，編號位置要-1
+            }
+        }
+        console.log('排序前:'+arrNum);
+        arrNum.sort((a,b)=>{
+            return a-b;
+        })
+        console.log('排序後:'+arrNum);
+        //特別號
+        let speNum=Math.floor(Math.random()*49)+1;
+        console.log('特別號:'+speNum)*/
+
+        // 方法二 : while
+        /*let i =0;
+        while(i<6){
+            let lotNum=Math.floor(Math.random()*49)+1;
+            if (arrNum.indexOf(lotNum) == -1){
+                arrNum.push(lotNum);
+                i++;
+            }
+        }
+        console.log('排序前:'+arrNum);
+        arrNum.sort((a,b)=>{
+            return a-b;
+        })
+        console.log('排序後:'+arrNum);
+        //特別號
+        let speNum=Math.floor(Math.random()*49)+1;
+        console.log('特別號:'+speNum)*/
+
+        // 方法三 : do-while
+        /*let i = 0;
+        do {
+            let lotNum = Math.floor(Math.random() * 49) + 1;
+            if (arrNum.indexOf(lotNum) == -1) {
+                arrNum.push(lotNum);
+                i++;
+            }
+        }while(i<6);
+        console.log('排序前:'+arrNum);
+        arrNum.sort((a,b)=>{
+            return a-b;
+        })
+        console.log('排序後:'+arrNum);
+        //特別號
+        let speNum=Math.floor(Math.random()*49)+1;
+        console.log('特別號:'+speNum);*/
+    </script>
+</body>
+
+</html>

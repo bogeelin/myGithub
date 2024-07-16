@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        let arrNum = [];
+        function getRanNum(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+        //大樂透 : 1-49挑6個號碼，第二區1-49挑1個號碼
+        function getLotNum() {
+            let i = 0;
+            while (i < 6) {
+                let lotNum = getRanNum(49);
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            arrNum.sort((a, b) => {
+                return a - b;
+            })
+            console.log('大樂透號碼:' + arrNum);
+            //特別號
+            let speNum = Math.floor(Math.random() * 49) + 1;
+            console.log('大樂透特別號:' + speNum)
+        }
+        //威力彩 : 1-38挑6個號碼，第二區1-8挑1個號碼
+        function getWlNum() {
+            let i = 0;
+            while (i < 6) {
+                let lotNum = getRanNum(38);
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            arrNum.sort((a, b) => {
+                return a - b;
+            })
+            console.log('威力彩號碼:' + arrNum);
+            //特別號
+            let speNum = getRanNum(8);
+            console.log('威力彩特別號:' + speNum)
+        }
+
+        //今彩539 : 1-39挑5個號碼
+        function get539Num() {
+            let i = 0;
+            while (i < 5) {
+                let lotNum = getRanNum(39);
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            arrNum.sort((a, b) => {
+                return a - b;
+            })
+            console.log('今彩539號碼:' + arrNum);
+        }
+
+        let lotGameNo;
+        while (true) {
+            lotGameNo = prompt(`請輸入樂透遊戲代碼\n1.大樂透 2.威力彩 3.今彩539`);
+            if (lotGameNo == null) {
+                window.alert('您按了取消');
+                break;
+            } else if (lotGameNo == '') {
+                window.alert('輸入不能為空白，請輸入遊戲代碼 1.大樂透 2.威力彩 3.今彩539')
+            } else {
+                switch (lotGameNo.trim()) {
+                    case '1':
+                        getLotNum();
+                        break;
+                    case '2':
+                        getWlNum();
+                        break;
+                    case '3':
+                        get539Num();
+                        break;
+                    default:
+                        window.alert('輸入錯誤，請輸入遊戲代碼 1.大樂透 2.威力彩 3.今彩539');
+                        continue;
+                }
+                break;
+            }
+        }
+
+    </Script>
+</body>
+
+</html>
