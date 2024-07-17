@@ -27,10 +27,11 @@
     --lesser-5: #8f6b6d;
 
     /* 透明 */
-    --alpha-w-60: rgba(255,255,255,.6);
-    --alpha-b-20: rgba(0,0,0,.2);
-    --alpha-b-40: rgba(0,0,0,.4);
-    --alpha-r-20: rgba(220,185,185,.2);
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, .4);
+    --alpha-r-20: rgba(220, 185, 185, .2);
 }
 
 * {
@@ -271,6 +272,17 @@ section {
     /*限制顯示的文字行數*/
 }
 
+/* 最新消息區*/
+#news {
+    background-color: var(--primary);
+}
+
+#news .item:hover {
+    background-color: var(--lesser-1);
+    transition: .4s;
+}
+
+/* 服務項目 */
 #service p {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -285,12 +297,21 @@ section {
     height: 60vh;
     background-position: center;
     background-size: cover;
+    transition: .4s;
+}
+
+#service .content:hover {
+    background-color: var(--alpha-w-60);
 }
 
 #service a {
     width: 100%;
     color: white;
     background-color: rgba(0, 0, 0, .4);
+}
+
+#service a:hover {
+    color: var(--deep);
 }
 
 .svc-1 {
@@ -307,6 +328,37 @@ section {
 
 .svc-4 {
     background-image: url(../images/pt_svc4.jpg);
+}
+
+/* 影片 */
+#video {
+    background-color: var(--tertiary);
+}
+
+.video {
+    width: 65%;
+    max-width: 1050px;
+}
+
+video {
+    width: 100%;
+}
+
+/* 關於我們 */
+#about .content {
+    width: 65%;
+    height: 100%;
+    background-color: var(--alpha-r-20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about p {
+    width: 85%;
+    height: 65%;
+    overflow: auto;
 }
 
 /* 聯絡我們 */

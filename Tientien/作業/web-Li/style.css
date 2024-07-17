@@ -82,6 +82,7 @@ section {
     font-weight: bold;
     font-size: 3rem;
     color: #e67d04;
+    text-shadow: -3px 6px 15px rgba(170, 97, 42, .32);
     letter-spacing: .3rem;
 }
 
@@ -117,8 +118,12 @@ section {
 }
 
 .box__list figure {
-
     width: 50%;
+}
+
+.box__list figure:hover{
+    transform: scale(1.1);
+    transition-duration: transform 0.3s ease;
 }
 
 .box__list img {
