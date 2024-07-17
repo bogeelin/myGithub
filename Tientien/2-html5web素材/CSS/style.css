@@ -201,12 +201,29 @@ section {
 
 .box__list {
     width: 80%;
+    max-width: 1400px;
     display: flex;
 }
 
 .box__list .item {
     flex: 1;
     margin: 0 15px;
+    box-shadow: 3px 3px 8px #898989;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.box__list figure {
+    height: 35vh;
+}
+
+.box__list img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.box__list .content {
+    padding: 15px 28px;
 }
 
 .box__list h1 {
@@ -216,7 +233,53 @@ section {
 
 .box__list p {
     font-size: .9rem;
-    text-align: justify; /*齊行，建議中文內容時使用，英文是單字間距均分，建議不使用*/
+    text-align: justify;
+    /*齊行，建議中文內容時使用，英文是單字間距均分，建議不使用*/
+
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*文字溢出出現省略號時，若有設定line-clamp時，瀏覽器會自動加入*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    /*限制顯示的文字行數*/
+}
+
+#service p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+}
+
+#service .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+#service a{
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+}
+.svc-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.svc-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.svc-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.svc-4 {
+    background-image: url(../images/pt_svc4.jpg);
 }
 
 /* 聯絡我們 */
