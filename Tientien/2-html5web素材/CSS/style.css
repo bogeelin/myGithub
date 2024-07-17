@@ -1,11 +1,36 @@
 @charset "UTF-8";
-/*UTF-8 一定要在第一行*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-
+/*UTF-8 一定要在第一行*/
 /* google fonts 一定要在第二行 */
+
 @font-face {
     font-family: LemonMilk;
     src: url(../fonts/LemonMilk/LemonMilk.otf);
+}
+
+:root {
+    /* 灰階 */
+    --deep: #444;
+    --grey: #999;
+    --light: #f1f1f1;
+
+    /* 背景 */
+    --primary: #f2edf0;
+    --secondary: #e6ece5;
+    --tertiary: #ecf0f4;
+
+    /* 輔助 */
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #8f6b6d;
+    --lesser-5: #8f6b6d;
+
+    /* 透明 */
+    --alpha-w-60: rgba(255,255,255,.6);
+    --alpha-b-20: rgba(0,0,0,.2);
+    --alpha-b-40: rgba(0,0,0,.4);
+    --alpha-r-20: rgba(220,185,185,.2);
 }
 
 * {
@@ -55,7 +80,7 @@ img {
 a {
     display: block;
     text-decoration: none;
-    color: #444;
+    color: var(--deep);
 }
 
 /* 共用區 */
@@ -71,7 +96,7 @@ a {
 }
 
 .btn-s:hover {
-    background-color: #444;
+    background-color: var(--deep);
     color: white;
 }
 
@@ -187,7 +212,7 @@ section {
     font-weight: bold;
     font-size: 2rem;
     letter-spacing: .3rem;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid var(--deep);
 }
 
 .title h3 {
@@ -261,11 +286,13 @@ section {
     background-position: center;
     background-size: cover;
 }
-#service a{
+
+#service a {
     width: 100%;
     color: white;
     background-color: rgba(0, 0, 0, .4);
 }
+
 .svc-1 {
     background-image: url(../images/pt_svc1.jpg);
 }
