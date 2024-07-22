@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立一個加法運算函式add()
+        /*
+        function add(n1 = 0, n2 = 0, n3 = 0) {
+        let tot = 0;
+        tot = n1 + n2 + n3;
+        return tot;
+        }
+        console.log(add());
+        console.log(add(5));
+        console.log(add(5, 3));
+        console.log(add(5, 3, 5));
+        console.log(add(5, 3, 5, 3));
+        */
+        // 當呼叫函式時的"參數值個數"與"函式的參數個數"不一定相同時
+        //可使用其餘參數寫法 : 三個小數點 "...+資料名稱" =>參數資料會形成一個陣列
+        function add(...number) {
+            let tot = 0;
+            console.log(number);
+            for (let num of number) {
+                tot += num;
+            }
+            return tot;
+        }
+        console.log(add());
+        console.log(add(5));
+        console.log(add(5, 3));
+        console.log(add(5, 3, 5));
+        console.log(add(5, 3, 5, 3))
+    </script>
+</body>
+
+</html>
