@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            list-style-type: none;  /* 去掉預設的點 */
+            padding: 0 2px;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;  /* 讓內容和按鈕左右對齊 */
+            align-items: center;
+            width: 100%;
+            max-width: 250px;
+            padding: 12px 8px;
+            border: 1px solid #ddd;
+        }
+
+        #btn:hover,
+        #btn2:hover,
+        .btn3:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="加入" id="btn">
+    <input type="button" value="刪除" id="btn2">
+    <form action=""></form>
+    <ul>
+        <li>測試</li>
+    </ul>
+
+    <script>
+        btn2.addEventListener('click', () => {
+            //取得第一個li
+            let removeElm = document.getElementsByTagName('li')[0];
+            //找到父元素節點
+            let parentElm = removeElm.parentNode;
+            //從父元素移除第一個li子節點
+            parentElm.removeChild(removeElm);
+        });
+
+        let myBtn = document.querySelector('#btn');
+        myBtn.addEventListener('click', () => {
+            let newList = document.querySelector('#txt1');
+            //擋掉空白輸入
+            if (newList.value.trim() === '') {
+                alert('請輸入內容');
+                return;
+            }
+            // 建立新節點 =>li
+            let newElm = document.createElement('li');
+            // 建立文字節點 =>文字方塊內容
+            let newText = document.createTextNode(newList.value);
+            // 將文字節點加入新節點
+            newElm.appendChild(newText);
+
+            // 建立刪除按鈕
+            let delBtn = document.createElement('button');
+            delBtn.textContent = 'X';
+            delBtn.className='btn3';
+            // 加入刪除按鈕至新節點
+            newElm.appendChild(delBtn);
+
+            // 取得要加入新節點的位置
+            let getUL = document.querySelector('ul');
+            // 將新節點加入到ul元素的最後一個子節點
+            getUL.appendChild(newElm);
+
+            // 刪除按鈕功能
+            delBtn.addEventListener('click', () => {
+                getUL.removeChild(newElm);
+            });
+
+            // 清空文字方塊
+            newList.value = '';
+        });
+    </script>
+</body>
+
+
+</html>
