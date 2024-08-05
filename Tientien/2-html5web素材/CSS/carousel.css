@@ -1,6 +1,5 @@
 /* banner Styles */
 #banner {
-    height: 38em;
     color: #fff;
     background-color: #222;
 }
@@ -37,21 +36,28 @@
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    padding-top: 6em;
-    background-image: linear-gradient(rgba(243, 129, 129, 0.9), rgba(252, 227, 138, 0.9));
+    text-shadow: 0 0 10px var(--alpha-b-20);
+    background-image: linear-gradient(rgba(195, 168, 168, 0.5), rgba(247, 247, 247, 0.3));
     box-sizing: border-box;
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper h2 {
     padding-bottom: 0.3em;
-    font-family: 'Kaushan Script', cursive;
-    font-weight: 400;
+    font-family: "Lobster", sans-serif;
+    font-weight: 100;
+    font-style: normal;
     font-size: 2.5em;
     text-transform: none;
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper h1 {
+    font-family: "Shrikhand";
+    font-weight: 100;
     font-size: 6em;
     line-height: 95%;
 }
@@ -72,11 +78,10 @@
 #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a {
     padding: 0.5em 2em;
     text-align: center;
-    font-family: Montserrat, sans-serif;
     font-size: 0.875em;
     color: #fff;
     text-transform: uppercase;
-    border: 0.1875em solid #fff;
+    border: 2px solid #fff;
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
@@ -86,27 +91,27 @@
 }
 
 #banner .content-slider .slider #top-banner-1 {
-    background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-1.png') no-repeat center center;
+    background: url(../images/banner_1.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #banner .content-slider .slider #top-banner-2 {
-    background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-2.png') no-repeat center center;
+    background: url(../images/banner_2.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #banner .content-slider .slider #top-banner-3 {
-    background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-3.png') no-repeat center center;
+    background: url(../images/banner_3.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #banner .content-slider .slider #top-banner-4 {
-    background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-4.png') no-repeat center center;
+    background: url(../images/banner_4.jpg) no-repeat center center;
     background-size: cover;
 }
 
 #banner .content-slider .slider #top-banner-5 {
-    background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-4.png') no-repeat center center;
+    background: url(../images/banner_5.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -121,24 +126,24 @@
 #banner .content-slider nav .controls {
     display: block;
     width: 70%;
-    margin: 0 auto;
-    font-family: Montserrat, sans-serif;
+    margin: 40px auto;
+    font-family: LemonMilk, sans-serif;
     color: #fff;
 }
 
 #banner .content-slider nav .controls label {
     position: relative;
     display: inline-block;
-    width: 20%;
+    width: 10%;
     height: 3.1em;
     overflow: hidden;
-    margin: 0 1em;
+    margin: 0 5px;
     padding-top: 1em;
     text-align: left;
     text-transform: uppercase;
-    font-family: Montserrat, sans-serif;
+    font-family: LemonMilk, sans-serif;
     font-size: 1em;
-    color: #f6eac5;
+    color: #ffffff;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.3s;
@@ -150,7 +155,7 @@
     left: 0;
     height: 3px;
     width: 100%;
-    background: #f6eac5;
+    background: #ffffff;
     z-index: 100;
 }
 
