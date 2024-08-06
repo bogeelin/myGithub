@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 事件基本語法 -->
+    <!-- <div 事件名稱="程式碼">標籤內容</div> -->
+    <!-- <button 事件名稱="程式碼">按鍵內容</button> -->
+    <div onclick="changeP1();">按一下變更段落內容</div>
+    <p id="p1">第一段原始內容</p>
+    <h2 onclick="changeP2();">標題2</h2>
+    <p id="p2" class="p2">第二段原始內容</p>
+
+    <script>
+        // 更改第一個段落
+        function changeP1() { 
+            // 變更網頁body內容
+            // document.body.innerHTML = '改變Body內容了';
+            // 變更段落內容
+            // document.querySelector('p').innerHTML = '取得段落並改變內容了';
+
+            // 只取得第一個段落
+            // console.log(document.querySelector('p'));
+            // 取得所有段落1
+            // console.log(document.querySelectorAll('p'));
+            // 取得所有段落2
+            // console.log(document.getElementsByTagName('p'));
+
+            // 變更指定陣列物件中的內容
+            document.getElementsByTagName('p')[0].innerHTML='改變 p 陣列中第0個的內容了';
+        };
+
+        function changeP2() {
+            // 取得第二個段落並改變內容
+            // document.getElementsByTagName('p')[1].innerHTML = '取得段落並改變內容了';
+
+            // 取得id改變段落內容
+            // document.getElementById('p2').innerHTML = '取得id並改變段落內容了';
+
+            // 取得class=>p2改變段落內容
+            // document.getElementsByClassName('p2')[0].innerHTML = '取得class並改變內容了'; <=較不常用
+            document.querySelector('.p2').innerHTML='取得class並改變內容了';
+        };
+    </script>
+</body>
+
+</html>

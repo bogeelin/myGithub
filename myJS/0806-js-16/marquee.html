@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            border: 1px solid black;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        marquee {
+            background-color: rgb(162, 229, 237);
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 跑馬燈文字效果 -->
+        <!-- behavior(滾動方式)
+        預設為:scroll
+        左右來回:alternate
+        只移動一次:slide-->
+        <!-- scrollamount(移動速度) -->
+        <!-- direction(移動方向) -->
+        
+        <marquee behavior="slide" scrollamount="10" direction="right" ; onmouseover="stop();" onmouseout="start();">
+            跑馬燈文字效果
+        </marquee>
+    </div>
+</body>
+
+</html>
