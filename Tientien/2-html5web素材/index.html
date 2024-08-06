@@ -36,29 +36,36 @@
                 </svg>
             </a>
         </h1>
-
-        <!-- 選單列 -->
-        <nav class="navigation">
-            <!-- icon btn | ul.icon>li*3>a -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-                <li><a class="btn-s" href="./login.html">LOGIN</a></li>
-            </ul>
-            <!-- main btn | ul.icon>li*6>a-->
-            <ul>
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">VIDEO</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+        <!-- 三條線漢堡按鈕 -->
+        <div class="navbar">
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- 選單列 -->
+            <nav class="navigation">
+                <!-- icon btn | ul.icon>li*3>a -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="btn-s" href="./login.html">LOGIN</a></li>
                 </ul>
-            </ul>
+                <!-- main btn | ul.icon>li*6>a-->
+                <ul>
+                    <ul class="menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        <li><a href="#">VIDEO</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </ul>
 
-        </nav>
+            </nav>
+        </div>
     </header>
     <!-- 內容區 -->
     <main>
@@ -186,6 +193,7 @@
                     </a>
                 </article>
             </div>
+            <a class="btn-s" href="#">more</a>
         </section>
         <section id="service">
             <header class="title">
@@ -226,6 +234,7 @@
                     </a>
                 </li>
             </ul>
+            <a class="btn-s" href="#">more</a>
         </section>
         <section id="video">
             <header class="title">
@@ -233,7 +242,7 @@
                 <h3>相關影片</h3>
             </header>
             <div class="video">
-                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls></video>
+                <video src="./images/Planter.mp4" poster="./images/cover.jpg"></video>
             </div>
         </section>
         <section id="about">
@@ -283,7 +292,7 @@
                     numquam. Ducimus odit libero, nam est rem ipsam incidunt, distinctio dolor atque debitis amet
                     suscipit. Incidunt, adipisci?</p>
             </div>
-            <video src="./images/flower.mp4"></video>
+            <video src="./images/flower.mp4" autoplay muted loop></video>
         </section>
         <section id="contact">
             <header class="title">
@@ -311,10 +320,6 @@
             <div class="flower_w"><img src="./images/flower_w.png" alt="裝飾白花"></div>
         </section>
     </main>
-    <!-- 頁尾區 -->
-    <!-- 需先載入jquery原始碼，讓瀏覽器讀懂 -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jquery官網CDN -->
-    <script src="./js/carousel.js"></script>
     <footer>
         <!-- LOGO區 -->
         <div>
@@ -378,6 +383,13 @@
         </div>
         <small>copyright&copy; RITA'S FLOWERS.</small>
     </footer>
+    <!-- 頁尾區 -->
+
+    <!-- 需先載入jquery原始碼，讓瀏覽器讀懂 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jquery官網CDN -->
+    <script src="./js/carousel.js"></script>
+    <!-- 自訂的js一定要寫在最底下=>最後執行 -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
