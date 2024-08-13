@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 600px;
+        }
+
+        #picB {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #picB img {
+            max-width: 400px;
+            max-height: 800px;
+        }
+
+        #picS {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+
+        #picS img {
+
+            max-width: 100px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 縮圖換大圖 -->
+    <div id="wrap">
+        <!-- 大圖 -->
+        <div id="picB">
+            <img id="pic" src="./img/pt_news2.jpg">
+        </div>
+        <!-- 小圖 -->
+        <div id="picS">
+            <ul><img onclick="changePic('img1');" src="./img/pt_svc1.jpg"></ul>
+            <ul><img onclick="changePic('img2');" src="./img/pt_svc2.jpg"></ul>
+            <ul><img onclick="changePic('img3');" src="./img/pt_svc3.jpg"></ul>
+        </div>
+    </div>
+
+    <script>
+        function changePic(picSrc) {
+            // 取得大圖
+            let picB = document.getElementById('pic');
+            // picB.src = 'picSrc';
+            switch (picSrc) {
+                case 'img1':
+                    picB.src = './img/pt_svc1.jpg';
+                    break;
+                case 'img2':
+                    picB.src = './img/pt_svc2.jpg';
+                    break;
+                case 'img3':
+                    picB.src = './img/pt_svc3.jpg';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000000;
+            border-radius: 99px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="myDiv"></div>
+        <button id="btnR" onclick="changeR();">紅</button>
+        <button id="btnY" onclick="changeY();">黃</button>
+        <button id="btnG" onclick="changeG();">綠</button>
+        <hr>
+        <button id="btnR" onclick="getBtn('r');">紅</button>
+        <button id="btnY" onclick="getBtn('y');">黃</button>
+        <button id="btnG" onclick="getBtn('g');">綠</button>
+    </div>
+    <script>
+        function changeR() {
+            let myDiv = document.getElementById('myDiv');
+            myDiv.style.backgroundColor = 'red';
+        }
+
+        function changeY() {
+            let myDiv = document.getElementById('myDiv');
+            myDiv.style.backgroundColor = 'yellow';
+        }
+
+        function changeG() {
+            let myDiv = document.getElementById('myDiv');
+            myDiv.style.backgroundColor = 'green';
+        }
+        
+        // 整合上方3個函式為1個，傳參數
+        function getBtn(color) {
+            let myDiv = document.getElementById('myDiv');
+            switch (color) {
+                case 'r':
+                    myDiv.style.backgroundColor = 'red';
+                    break;
+                case 'y':
+                    myDiv.style.backgroundColor = 'yellow';
+                    break;
+                case 'g':
+                    myDiv.style.backgroundColor = 'green';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
