@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 檢查是否勾選「我同意合約」 -->
+    <form id="myform" action="">
+        <input type="checkbox" id="agree">我同意合約
+        <br>
+        <span id="errmsg"></span>
+        <br>
+        <input type="submit" value="確定送出">
+    </form>
+    <script>
+        let myform = document.getElementById('myform');
+        let agree = document.getElementById('agree');
+        let errmsg = document.getElementById('errmsg');
+
+        myform.addEventListener('submit', function (e) {
+            if (!agree.checked) {
+                errmsg.textContent = '必須核取「我同意合約」';
+                errmsg.style.color = 'red';
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

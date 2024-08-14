@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="website">網站 : </label>
+        <select name="" id="website">
+            <option value="">請選擇</option>
+            <option value="https://www.google.com.tw/?hl=zh_TW">Google</option>
+            <option value="https://github.com/">Github</option>
+        </select>
+        <!-- <button id="btn" onclick="toWebsite();">前往網站</button> -->
+    </form>
+
+    <script>
+        let website = document.getElementById('website');
+        website.addEventListener('change', function(){
+            location.href=website.value;
+        });
+        
+    </script>
+</body>
+
+</html>
