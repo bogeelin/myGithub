@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 存放資料在本機端的瀏覽器中的Local Storage -->
+    <form action="./localStorge-login.html">
+        <label for="uid">帳號</label>
+        <input type="text" id="uid">
+        <br>
+        <label for="upw">密碼</label>
+        <input type="text" id="upw">
+        <!-- 隱藏輸入的密碼type使用password -->
+        <br><br>
+        <input id="btn" type="submit" value="登入1">
+        <input id="btn2" type="button" value="登入2">
+    </form>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            // 帳號
+            let uid = document.getElementById('uid');
+            //寫入到local storage
+            window.localStorage.setItem('user_id', uid.value);
+            // 密碼
+            let upw = document.getElementById('upw');
+            window.localStorage.setItem('user_pw', upw.value);
+        })
+
+        // 登入2按鈕，使用跳轉頁面指令
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', function () {
+            // 帳號
+            let uid = document.getElementById('uid');
+            //寫入到local storage
+            window.localStorage.setItem('user_id', uid.value);
+            // 密碼
+            let upw = document.getElementById('upw');
+            window.localStorage.setItem('user_pw', upw.value);
+            // 跳轉至指定頁面
+            window.location.href = './localStorge-login.html';
+        })
+
+    </script>
+</body>
+
+</html>
