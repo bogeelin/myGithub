@@ -32,6 +32,7 @@
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, .4);
     --alpha-r-20: rgba(220, 185, 185, .2);
+    --alpha-r-40: rgba(183, 112, 112, 0.4);
 }
 
 /* 卷軸樣式 */
@@ -138,7 +139,7 @@ a {
 
     width: 60px;
     height: 60px;
-    background-color: var(--alpha-b-40);
+    background-color: var(--alpha-r-40);
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
