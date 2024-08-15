@@ -152,12 +152,12 @@
             </div>
         </section>
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <div class="box__list">
-                <article class="item">
+                <article class="item smoove" data-move-x="-120%" data-rotate="35deg">
                     <a href="">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
                         <div class="content">
@@ -168,7 +168,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-60%" data-rotate="15deg" >
                     <a href="">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="content">
@@ -179,7 +179,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="120%" data-rotate="-35deg">
                     <a href="">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="content">
@@ -195,12 +195,12 @@
             <a class="btn-s" href="#">more</a>
         </section>
         <section id="service">
-            <header class="title">
+            <header class="title smoove">
                 <h2>SERVICE</h2>
                 <h3>服務項目</h3>
             </header>
             <ul class="box__list">
-                <li class="item svc-1">
+                <li class="item svc-1 smoove" data-move-x="-200px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, repudiandae. Eaque dolorum
@@ -208,7 +208,7 @@
                             ducimus debitis, sit, ad unde iure?</p>
                     </a>
                 </li>
-                <li class="item svc-2">
+                <li class="item svc-2 smoove" data-move-x="-100px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, repudiandae. Eaque dolorum
@@ -216,7 +216,7 @@
                             ducimus debitis, sit, ad unde iure?</p>
                     </a>
                 </li>
-                <li class="item svc-3">
+                <li class="item svc-3 smoove" data-move-x="100px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, repudiandae. Eaque dolorum
@@ -224,7 +224,7 @@
                             ducimus debitis, sit, ad unde iure?</p>
                     </a>
                 </li>
-                <li class="item svc-4">
+                <li class="item svc-4 smoove" data-move-x="200px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, repudiandae. Eaque dolorum
@@ -235,17 +235,17 @@
             </ul>
             <a class="btn-s" href="#">more</a>
         </section>
-        <section id="video">
-            <header class="title">
+        <section id="video ">
+            <header class="title smoove">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
-            <div class="video">
+            <div class="video smoove-z-1">
                 <video src="./images/Planter.mp4" poster="./images/cover.jpg"></video>
             </div>
         </section>
         <section id="about">
-            <div class="content">
+            <div class="content smoove">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -294,7 +294,7 @@
             <video src="./images/flower.mp4" autoplay muted loop></video>
         </section>
         <section id="contact">
-            <header class="title">
+            <header class="title smoove">
                 <h2>CONTACT</h2>
                 <h3>聯絡我們</h3>
             </header>
@@ -388,6 +388,8 @@
     <!-- 需先載入jquery原始碼，讓瀏覽器讀懂 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jquery官網CDN -->
     <script src="./js/carousel.js"></script>
+    <!-- jquery smooth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <!-- 自訂的js一定要寫在最底下=>最後執行 -->
     <script src="./js/script.js"></script>
 </body>

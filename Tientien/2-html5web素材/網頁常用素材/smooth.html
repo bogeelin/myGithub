@@ -12,11 +12,12 @@
 
         header {
             height: 100vh;
-            background: rgb(255, 206, 115);
+            background: rgb(153, 176, 235);
             font-size: 3rem;
             color: white;
             text-align: center;
             line-height: 100vh;
+            margin-bottom: 10px;
         }
 
         .row {
@@ -27,17 +28,19 @@
             flex: 1;
             /*主軸(水平)為寬度均分*/
             height: 300px;
-            margin: 15px;
-            background: rgb(128, 201, 176);
+            margin: 20px;
+            background: rgb(223, 223, 223);
+            border: 1px solid rgb(128, 128, 128);
         }
 
         footer {
             height: 30vh;
-            background: rgb(127, 127, 127);
+            background: rgb(104, 131, 160);
             font-size: 3rem;
             color: white;
             text-align: center;
             line-height: 30vh;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -51,31 +54,32 @@
             <div class="col smoove"></div>
             <div class="col smoove"></div>
         </div>
-        <!-- 選轉載入 -->
+        <!-- 旋轉載入 -->
         <div class="row">
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
+            <div class="col smoove" data-move-x="-120%" data-rotate="70deg"></div>
+            <div class="col smoove" data-move-x="-50%" data-rotate="35deg"></div>
+            <div class="col smoove" data-move-x="50%" data-rotate="-35deg"></div>
+            <div class="col smoove" data-move-x="120%" data-rotate="-70deg"></div>
         </div>
         <!-- 左右載入 -->
         <div class="row">
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
+            <div class="col smoove" data-move-x="-200px" data-move-y="200px"></div>
+            <div class="col smoove" data-move-x="-100px" data-move-y="200px"></div>
+            <div class="col smoove" data-move-x="100px" data-move-y="200px"></div>
+            <div class="col smoove" data-move-x="200px" data-move-y="200px"></div>
         </div>
         <!-- 開門旋轉載入 -->
         <div class="row">
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
+            <div class="col smoove" data-move-x="-100px" data-rotate-y="90deg"></div>
+            <div class="col smoove" data-move-x="100px" data-rotate-y="-90deg"></div>
         </div>
         <!-- 透視翻轉載入 -->
-        <div class="row">
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
-            <div class="col smoove"></div>
+        <div class="row smoove smoove-z">
+            <!-- 子元素相同動作，可直接設定在父元素上 -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
         </div>
     </main>
     <footer>FOOTER</footer>
@@ -83,10 +87,15 @@
     <!-- jquery官網CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- jquery smooth -->
-    <script src="https//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script>
         $('.smoove').smoove({
-            offset:'40%'
+            offset: '40%'
+        });
+        $('.smoove-z').smoove({
+            moveZ: '500px',
+            rotateX: '90deg',
+            moveY: '250px'
         });
     </script>
 </body>

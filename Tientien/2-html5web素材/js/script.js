@@ -32,3 +32,17 @@ $(function () {    /* document ready 一個js檔只要執行一次即可 */
     });
 
 });
+
+$('.smoove').smoove({
+    offset: '40%'
+});
+$('.smoove-z').smoove({
+    moveZ: '400px',
+    // rotateX: '90deg',
+    moveY: '250px'
+});
+$('.smoove-z-1').smoove({
+    moveZ: '-200px',
+    // rotateX: '90deg',
+    moveY: '100px'
+});
