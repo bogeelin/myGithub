@@ -12,7 +12,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
     integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
+<style>
+  .news-text{
+    font-size: 20px;
+    
+    margin: 0 0 30px;
+  }
+  .news-imgText{
+    font-size: 16px;
+    line-height: 22.4px;
+    margin: 10px 0;
+    color: #7e7e7e;
+    font-weight: 300;
+  }
+</style>
+  </head>
 
 <body class="bg-lighter">
   <div class="container main my-5">
@@ -23,13 +37,46 @@
           <h1 class="mt-0 text-muted">隨堂練習</h1><small>檔名：<code>react-7.html</code></small>
         </div>
         <!-- 練習開始 -->
-        <!-- 圖片連結
-  https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80
-  https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
-  https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
- -->
         <div id="root"></div>
-
+        <!-- 撰寫JSX -->
+        <script type="text/babel">
+          function App() {
+            const data = {
+              title: 'iPhone 16 Pro最終神祕色來了！4色機身外觀再改變 果粉喊醜：像腹瀉顏色',
+              imgUrl1: 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2024/08/19/0/30293500.jpg&x=0&y=0&sw=0&sh=0&exp=3600&w=930&nt=1',
+              imgTxt1: "蘋果旗艦款手機iPhone 16 Pro、iPhone 16 Pro Max新色曝光 ，第4色為「沙漠汰金屬（The desert titanium）」，但被網友稱很像腹瀉的顏色。（翻攝自SonnyDickson的X）",
+              content1: '蘋果 （Apple）全新手機iPhone 16系列剩不到1個月就要在9月蘋果發表會登場，先前已有爆料大神曝光平價版iPhone 16五種色系，如今旗艦版iPhone 16 Pro系列4色實機照完整曝光，最後1色揭曉後引來果粉直呼「我不想買這個」、「很像腹瀉的顏色 。」',
+              content2: '日前有兩名爆料大神Sonny Dickson和Majin Bu日前各自在社群平台X（舊名Twitter，又稱推特）貼出iPhone 16 Pro、iPhone 16 Pro Max 的實機模型照及鏡頭環 ，其中已知白色鈦金屬、更接近太空黑的「黑色鈦金屬 」，以及有更多灰色調的原色鈦金屬，另外還有全新色 系「沙漠汰金屬 （The desert titanium）」登場，反而不是先前提到的玫瑰金。',
+              imgUrl2: 'https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2024/08/19/0/30293502.jfif&x=0&y=0&sw=0&sh=0&exp=3600&w=1050&nt=1',
+              imgTxt2: 'iPhone 16 Pro、iPhone 16 Pro Max新色「沙漠汰金屬（The desert titanium）」曝光，仔細一看也可看出機身也從髮絲紋模樣的鈦金屬框架，變成拋光材質的鈦金屬框架。（翻攝自SonnyDickson的X）',
+              content3: 'Majin Bu表示，iPhone 16 Pro系列的「沙漠鈦金屬」算是暗金色，較為內斂深沉，有點接近舊款iPhone 14 Pro深紫色，且會取代iPhone 15 Pro的藍色鈦金屬。鏡頭環鈦白、鈦黑、鈦金和鈦灰也對應機身色系，讓手機看起來更為一致。另外，機身部分傳改為iPhone X 到iPhone 14 Pro的「拋光」鈦金屬，而非iPhone 15 Pro髮絲紋模樣的鈦金屬框架，這方面可從鏡頭環看出端倪。'
+            }
+            return <>
+              <div className="wrapper-grid"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '970px 10px 300px',
+                  width: '100%',
+                  maxWidth: '1280px',
+                }}>
+                <div className="wrapper-body__main">
+                  <h2 className="news-title" style={{ fontSize: '32px', fontWeight: '400', lineHeight: '46.4px', marginBottom: '20px' }}>{data.title}</h2>
+                  <img src={data.imgUrl1} className="news-img-top" alt="..." />
+                  <p className="news-imgText">{data.imgTxt1}</p>
+                  <p className="news-text">{data.content1}</p>
+                  <br />
+                  <p className="news-text">{data.content2}</p>
+                  <img src={data.imgUrl2} className="news-img-top" alt="..." />
+                  <p className="news-imgText">{data.imgTxt2}</p>
+                  <p className="news-text">{data.content3}</p>
+                </div >
+              </div>
+            </>
+          }
+          ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+        </script>
         <!-- 練習結束 -->
       </main>
     </div>
