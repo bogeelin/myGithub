@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React練習</title>
+    <!-- 步驟1:載入React babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 步驟2:載入根元素(root) -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Card(props) {
+            // 檢查有無年齡資料
+            let msgAge = '';
+            if (props.age == '') {
+                msgAge = 'no data';
+            } else {
+                msgAge = props.age;
+            }
+            // 檢查有無按鈕資料
+            let msgBtnLink = '';
+            if (props.btnName == '') {
+                msgBtnLink = 'no link';
+            } else {
+                msgBtnLink = props.btnName;
+            }
+            return <>
+                <div className="card" style={{ width: '20rem', margin: '20px' }}>
+                    <img src={props.imgUrl} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">{props.name}</h5>
+                        <p className="card-text">{msgAge}</p>
+                        <a href="#" className="btn btn-primary">{msgBtnLink}</a>
+                    </div>
+                </div>
+            </>
+        }
+        // 步驟3:建立React元件
+        function App() {
+            return <>
+                <Card imgUrl='https://cdn.pixabay.com/photo/2024/01/19/18/08/bird-8519547_1280.jpg'
+                    name=' yellow bird'
+                    age=''
+                    btnName='see more'
+                />
+                <Card imgUrl='https://cdn.pixabay.com/photo/2023/08/13/00/43/blue-8186653_1280.jpg'
+                    name='blue bird'
+                    age='2 years old'
+                    btnName=''
+                />
+            </>
+        }
+        // 步驟4:顯示(渲染)App元件到根元素(root)'上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+    <!-- boopstrap css, icon -->
+    <link rel="stylesheet" href="./stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</body>
+
+</html>
