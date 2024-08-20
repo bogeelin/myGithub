@@ -22,7 +22,8 @@
                 <img src={props.imgUrl} title={props.title} style={{
                     width: '10%',
                     borderRadius: '20px',
-                    margin: '10px'
+                    margin: '10px',
+                    border:props.border
                 }} />
             </>
         }  
@@ -35,8 +36,8 @@
                     <h2>呼叫圖片元件</h2>
                     {/* 呼叫元件:擇其一 */}
                     {/* 使用自訂屬性名稱，傳值給元件，元件使用props接收 */}
-                    <GetImg imgUrl='./img/wine1.png' title='圖1'/>
-                    <GetImg imgUrl='./img/wine2.jpg' title='圖2'/>
+                    <GetImg imgUrl='./img/wine1.png' title='圖1' border='5px solid black'/>
+                    <GetImg imgUrl='./img/wine2.jpg' title='圖2' border='5px solid red'/>
                 </div>
             </>
         }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>版型建立</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script src="./js/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-lighter">
+    <div class="container main my-5">
+        <div class="row">
+            <main class="col post">
+                <div class="mb-4">
+                    <h1 class="mt-0 text-muted">版型建立</h1>
+                    <small>檔名：<code>01-createLayout.html</code></small>
+                </div>
+
+                <div id="root"></div>
+                <script type="text/babel">
+                    function Card(props) {
+                        {/*  資料解構:把物件或陣列內容提出來給指定變數*/ }
+                        const { title, cost, content, btnName } = props;
+                        return <>
+                            <div className="card mb-4">
+                                <div className="card-header">
+                                    <h4 className="my-0">{title}</h4>
+                                </div>
+                                <div className="card-body">
+                                    {/* 三元運算子 */}
+                                    <h1 className="card-title">
+                                        {cost}
+                                        {/* 如果 cost 不是 "請洽客服"，才顯示 /月 */}
+                                        {cost !== '請洽客服' && <small>/月</small>}
+                                    </h1>
+
+                                    <p>{content}</p>
+                                    <button type="button" className="btn btn-outline-primary">{btnName}</button>
+                                </div>
+                            </div>
+                        </>
+                    }
+                    const products = [
+                        {
+                            id: 1,
+                            title: '基本版',
+                            cost: '$1000',
+                            content: '基本版說明區',
+                            btnName: '免費試用'
+                        },
+                        {
+                            id: 2,
+                            title: '進階版',
+                            cost: '$6000',
+                            content: '進階版說明區',
+                            btnName: '進階版申請'
+                        },
+                        {
+                            id: 3,
+                            title: '企業版',
+                            cost: '請洽客服',
+                            content: '多人適用',
+                            btnName: '企業版申請'
+                        }
+                    ]
+
+                    function App() {
+                        return <>
+                            <h2>租用方案</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore molestiae
+                                facere asperiores sit aspernatur laboriosam ipsum, excepturi fuga,
+                                consequuntur cupiditate, nam a doloremque error adipisci nulla reiciendis
+                                itaque odio voluptatibus.
+                            </p>
+                            {/* 使用迴圈，將陣列物件中的資料填入 */}
+                            {/* 在輸出時使用JS的話，要加上{} */}
+                            {products.map((item) => {
+                                return (                                    
+                                    <Card key={item.id} title={item.title} cost={item.cost} content={item.cost} btnName={item.btnName} />
+                                )
+                            {/* 呼叫陣列中的物件時，需要一個key，且key的資料在陣列中是不能重複的 */}
+                            })
+                            }
+                        </>
+                    }
+
+                    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+                </script>
+                <link rel="stylesheet" href="./stylesheets/all.css">
+                <link rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</body>
+
+</html>
