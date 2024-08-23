@@ -1,0 +1,54 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.navigation .icon {
+  display: flex;
+}
+.navigation .icon a {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  transition: all 0.35s ease-in-out;
+}
+.navigation .icon .icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.navigation .icon .icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+.navigation .icon .icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+.navigation .icon .icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+.navigation .icon .icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+.navigation .icon .icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+.navigation .menu {
+  display: flex;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 99px;
+}
+.navigation .menu li {
+  border-right: solid 1px;
+}
+.navigation .menu li:last-child {
+  border: none;
+}
+.navigation .menu a {
+  font-size: 0.9rem;
+  line-height: 1;
+  margin: 0 20px;
+  border-bottom: solid 2px transparent;
+}
+.navigation .menu a:hover {
+  border-bottom: solid 2px;
+  transition: 0.35s ease-in-out;
+}/*# sourceMappingURL=test.css.map */
