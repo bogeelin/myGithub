@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //1.取出useState
+        const { useState } = React;
+
+        //5.建立一個搜尋元件
+        function SearchBox({ text, onSearchHandler }) {
+            return (
+                <React.Fragment>
+                    <label htmlFor="search2">搜尋</label>
+                    <input type="text"
+                        id="search2"
+                        className=""
+                        value={text}
+                        onChange={onSearchHandler}
+                    />
+                </React.Fragment>
+            )
+        }
+
+
+
+        function App() {
+            //2.定義狀態
+            const [text, setText] = useState('請輸入任意字');
+            //3.建立一個更新資料的函式
+            const onSearchHandler = (e) => {
+                setText(e.target.value);
+            }
+
+            //4.加上 搜尋 標籤與樣式
+            return (
+                <React.Fragment>
+                    <div>
+                        <label htmlFor="search">搜尋</label>
+                        <input type="text"
+                            id="search"
+                            className=""
+                            value={text}
+                            onChange={onSearchHandler}
+                        />
+                        {text}
+                        <hr />
+
+                        {/*渲染*/}
+                        <SearchBox text={text} onSearchHandler={onSearchHandler} />
+                        {text}
+                    </div>
+                </React.Fragment>
+            )
+        }
+
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+</body>
+
+</html>

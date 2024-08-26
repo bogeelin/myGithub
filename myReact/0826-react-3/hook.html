@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React - Hook</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 原生js寫法 -->
+    <button id="btn1">+</button>
+    <span id="showNum"></span>
+    <script>
+        let num = 0;
+        let btn1 = document.getElementById('btn1');
+        let showNum = document.getElementById('showNum');
+        showNum.textContent='JS:'+num;
+        btn1.addEventListener('click', () => {
+            num++;
+            console.log(`JS:${num}`);
+            showNum.textContent='JS:'+num;
+        });
+    </script>
+    <hr>
+    <!-- React寫法 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // useState 狀態
+        // 取得useState方法
+        const {useState}=React;
+
+        function App() {
+            // 陣列中的參數:前者是"變數"，後者是寫入變數的"方法"
+            const [num2,setNum2]=useState(0);
+            // useState(填入預設值)
+            // JSX寫法
+            return (
+                <div>                    
+                    {console.log(`JSX:${num2}`)}
+                    <button onClick={() => {
+                        // num2++;
+                        // 使用setNum2寫入
+                        setNum2(num2+1);
+                    }}>+</button>
+                    {'JSX:'}{num2}
+                </div>
+            )
+        }
+        // 步驟4:顯示(渲染)App元件到根元素(root)'上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+</body>
+
+</html>

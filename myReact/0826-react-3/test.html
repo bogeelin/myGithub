@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- JS寫法 -->
+    <h2>JS</h2>
+    <input type="text" id="input">
+    <script>
+        // change事件        
+        document.getElementById('input').addEventListener('change', (e) => {
+            // console.log('change事件被觸發了');
+            console.log('change事件:' + e.target.value);
+
+        });
+        // keyup事件
+        document.getElementById('input').addEventListener('keyup', (e) => {
+            // console.log('keyup事件被觸發了');
+            console.log('keyup事件:' + e.target.value);
+        });
+    </script>
+
+    <!-- React寫法 -->
+    <h2>React</h2>
+    <input type="text" id="input2">
+    <div id="root"></div>
+    <div type="root"></div>
+    <script type="text/babel">
+        //從React解構出useState方法
+        const { useState } = React;
+        function App() {
+            const [text, setText] = useState('');
+            return (
+                <div>
+                    <input type="text" id="inputReact" value={text} onChange={(e) => {
+                        setText(e.target.value);
+                    }} 
+                    //失去焦點(游標)
+                    onBlur={()=>{
+                        console.log('onBlur');
+                        console.log(text);
+                    }}
+                    //取得焦點
+                    onFocus={()=>{
+                        console.log('onFocus');
+                    }}
+                    />
+                    {/*顯示方塊內容*/}
+                    {text}
+                </div>
+            )
+        }
+        // 步驟4:顯示(渲染)App元件到根元素(root)'上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+</body>
+
+</html>
