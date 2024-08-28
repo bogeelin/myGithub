@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React空白模板</title>
+    <!-- 步驟1:載入React babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;  // useEffect方法被觸發的時間點是在渲染之後
+
+        function App() {
+            useEffect(() => {
+                document.title = 'useEffect更改了title';
+            });
+            return (
+                <>
+                    <h1>HELLO</h1>
+                    <button onClick={() => {
+                        document.title = "按鈕更改了title";
+                    }}>更新title</button>
+                </>
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+</body>
+
+</html>
