@@ -1,0 +1,99 @@
+@use 'reset';
+@use 'member';
+// @use './variables/color' as *;
+// @use './variables/font' as *;
+// @use './variables/size' as *;
+@use 'variables' as *;
+// @use './function/extend' as *;
+// @use './function/mixin' as *;
+@use 'function' as *;
+
+// @use可以整份檔案內容全部匯入，也可以調用,調用的話，就加入 as ;
+// * 星號表示直接調用
+.navigation {
+    color: map-get($color , lesser-5);
+
+    background: {
+        color: $gradient-w-a;
+    }
+}
+
+#topbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    @include flex-align-center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+#topbar .menu {
+    @extend %glassmorphism;
+
+    text-align: center;
+    flex-direction: column;
+    order: -1;
+    @include bordered;
+}
+
+.navigation {
+
+    // @each $social in fb, ig, line, x {
+    //     .icon-#{$social} {
+    //         background-image: url(../images/icon-#{$social}.svg);
+
+    //         &:hover {
+    //             background-image: url(../images/icon-#{$social}-hover.svg);
+    //         }
+    //     }
+    // }
+    $icons: (fb, ig, line, x);
+    
+    @each $social in $icons {
+        .icon-#{$social} {
+            background-image: url(../images/icon-#{$social}.svg);
+
+            &:hover {
+                background-image: url(../images/icon-#{$social}-hover.svg);
+            }
+        }
+    }
+
+}
+
+
+section {
+    @include flex-center;
+
+    flex-direction: column;
+    height: 100vh;
+}
+
+#form--contact input,
+#form--contact textarea {
+    @extend %glassmorphism;
+
+    width: 100%;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+/* 動態按鈕 */
+#btn__contact--submit {
+    @extend %glassmorphism;
+
+    border-radius: 50px;
+
+    @include flex-center;
+    @include bordered ($width: 2px);
+}
+
+#news p {
+    @include multiple-ellipsis;
+    -webkit-line-clamp: 5;
+}
+
+#service p {
+    @include single-ellipsis;
+}

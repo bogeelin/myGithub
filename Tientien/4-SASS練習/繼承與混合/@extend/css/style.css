@@ -1,0 +1,138 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  text-decoration: none;
+}
+
+#topbar .menu, #form--contact input,
+#form--contact textarea, #btn__contact--submit {
+  /* 玻璃擬態效果 */
+  background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.4));
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  background-color: #8f6b6d;
+}
+
+.navigation {
+  color: #8f6b6d;
+  background-color: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5);
+}
+
+#topbar {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+#topbar .menu {
+  text-align: center;
+  flex-direction: column;
+  order: -1;
+  border: 1px solid #a97f81;
+}
+
+.navigation .icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.navigation .icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+.navigation .icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+.navigation .icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+.navigation .icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+.navigation .icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+.navigation .icon-x {
+  background-image: url(../images/icon-x.svg);
+}
+.navigation .icon-x:hover {
+  background-image: url(../images/icon-x-hover.svg);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#form--contact input,
+#form--contact textarea {
+  width: 100%;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+/* 動態按鈕 */
+#btn__contact--submit {
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #a97f81;
+}
+
+#news p {
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+#service p {
+  /* 單行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}/*# sourceMappingURL=style.css.map */

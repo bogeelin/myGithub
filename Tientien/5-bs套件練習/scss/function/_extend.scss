@@ -1,0 +1,10 @@
+@use '../variables' as *;
+// 需要另外匯入變數檔案
+// @extend繼承的語法會加在use檔案之後,css語法最上方
+%glassmorphism {
+    /* 玻璃擬態效果 */
+    background-image: linear-gradient(150deg, map-get( $color , alpha-w-40 ));
+    box-shadow: $box-shadow-g;
+    backdrop-filter: blur(5px);
+    background-color: map-get( $color , lesser-5);
+}

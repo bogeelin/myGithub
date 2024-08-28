@@ -1,0 +1,110 @@
+$font-size-s: .85rem;
+$font-size-m: 1rem;
+$font-size-l: 1.5rem;
+$font-size-xl: 1.8rem;
+$font-size-xl: 2rem !default; // !default預設值的權重最低
+
+
+// $interval-s: 5px;
+// $interval-m: 10px;
+// $interval-l: 15px;
+
+// 間距 map-get( $interval ,  );
+$interval: (
+    s: 5px,
+    m: 10px,
+    l: 15px,
+);
+
+// 定義前綴詞，插值 #{}
+$icon-pre: icon;
+$navigation-pre: nav;
+$container-pre: box;
+
+$color: red;
+
+
+.navigation {
+    margin: map-get( $interval , s );
+    display: flex;
+    color: $color;
+
+    .menu {
+        padding: map-get( $interval , m );
+        display: flex;
+        color: $color;
+
+        li {
+            border-left: solid 1px var(--deep);
+            $color: blue; //同區域範圍套用，跳出區域後則變回起始設定
+            color: $color;
+
+            &:first-child {
+                border: none;
+                color: $color;
+            }
+
+            a {
+                font-size: .9rem;
+                color: $color;
+            }
+        }
+    }
+
+    .box {
+        color: $color;
+    }
+
+    .#{$icon-pre} {
+
+        .#{$icon-pre}-fb {
+            background-image: url(../images/icon-fb.svg);
+
+            &:hover {
+                background-image: url(../images/icon-fb-hover.svg);
+            }
+
+        }
+
+        .#{$icon-pre}-line {
+            background-image: url(../images/icon-line.svg);
+
+            &:hover {
+                background-image: url(../images/icon-line-hover.svg);
+            }
+        }
+
+        .#{$icon-pre}-ig {
+            $color: pink !global;
+            // !global 以後就算在不同區域也全部套用
+            color: $color;
+            background-image: url(../images/icon-ig.svg);
+
+            &:hover {
+                color: $color;
+                background-image: url(../images/icon-ig-hover.svg);
+            }
+        }
+    }
+}
+
+#contact {
+    color: $color;
+    position: relative;
+    overflow: clip;
+
+    background: {
+        color: $color;
+        image: url(../images/bg_contact.jpg);
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+        attachment: fixed;
+    }
+
+    font: {
+        family: Arial, Helvetica, sans-serif;
+        size: $font-size-xl;
+        weight: 700;
+    }
+}

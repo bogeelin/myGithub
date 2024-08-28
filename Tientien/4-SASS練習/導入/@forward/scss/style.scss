@@ -1,0 +1,15 @@
+@use 'reset';
+@use 'member';
+@use 'variables' as *;
+// @use './variables/color' as *;
+// @use './variables/font' as *;
+// @use './variables/size' as *;
+
+// @use可以整份檔案內容全部匯入，也可以調用,調用的話，就加入 as ;
+// * 星號表示直接調用
+.navigation {
+    color: map-get( $color ,  lesser-5 );
+    background: {
+        color: $gradient-w-a;
+    }
+}

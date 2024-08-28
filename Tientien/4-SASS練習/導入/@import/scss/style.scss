@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'reset';
+@import 'member';
+// @import整份檔案內容全部匯入
+
+.navigation {
+    color: map-get($color ,  lesser-5 );
+    background: {
+        color: $gradient-w-a;
+    }
+}

@@ -1,0 +1,60 @@
+.navigation {
+  margin: 5px;
+  display: flex;
+  color: red;
+}
+.navigation .menu {
+  padding: 10px;
+  display: flex;
+  color: red;
+}
+.navigation .menu li {
+  border-left: solid 1px var(--deep);
+  color: blue;
+}
+.navigation .menu li:first-child {
+  border: none;
+  color: blue;
+}
+.navigation .menu li a {
+  font-size: 0.9rem;
+  color: blue;
+}
+.navigation .box {
+  color: red;
+}
+.navigation .icon .icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.navigation .icon .icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+.navigation .icon .icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+.navigation .icon .icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+.navigation .icon .icon-ig {
+  color: pink;
+  background-image: url(../images/icon-ig.svg);
+}
+.navigation .icon .icon-ig:hover {
+  color: pink;
+  background-image: url(../images/icon-ig-hover.svg);
+}
+
+#contact {
+  color: pink;
+  position: relative;
+  overflow: clip;
+  background-color: pink;
+  background-image: url(../images/bg_contact.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */

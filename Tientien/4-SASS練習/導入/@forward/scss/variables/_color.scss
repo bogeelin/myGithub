@@ -1,0 +1,31 @@
+// 色彩規範 map-get( $color ,  );
+$color:(
+    // 灰階
+    deep: #444,
+    grey: #999,
+    light: #fffefe,
+    // 主色
+    primry: #f2edf0,
+    secondary: #e6ece5,
+    tertiary: #ecf0f4,
+    // 輔助
+    lesser-1: #f3e4e4,
+    lesser-2: #efdbdb,
+    lesser-3: #cdaaab,
+    lesser-4: #a97f81,
+    lesser-5: #8f6b6d,
+    // 透明
+    alpha-w-40: rgba(255, 255, 255, .4),
+    alpha-w-60: rgba(255, 255, 255, .6),
+    alpha-b-20: rgba(0, 0, 0, .2),
+    alpha-b-40: rgba(0, 0, 0, .4),
+    alpha-r-20: rgba(220, 185, 185, 0.2),
+    alpha-r-40: rgba(220, 185, 185, 0.4),
+    alpha-r-60: rgba(220, 185, 185, 0.6),
+    alpha-r-70: rgba(143, 107, 109, 0.7),
+);
+// 漸層
+// 數列不可列入map-get，需要獨立一個變數
+$gradient-w-a: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5);
+$gradient-banner-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+$box-shadow-g: 2px 2px 3px rgba(0, 0, 0, .15),inset -1px -1px rgba(255, 255, 255, .8);

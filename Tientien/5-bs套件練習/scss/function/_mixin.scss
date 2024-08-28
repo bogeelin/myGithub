@@ -1,0 +1,31 @@
+@use '../variables' as *;
+// @mixin直接插入至引用的語法中
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+// @mixin bordered ($width) {
+//     border: $width solid map-get( $color , lesser-4 );
+// }
+@mixin bordered-l ( $width: 5px , $color:map-get( $color , dark )) {
+    border-left: $width solid $color;
+}
+@mixin multiple-ellipsis {
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;display: -webkit-box;
+    -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 5;
+}
+@mixin single-ellipsis{
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
