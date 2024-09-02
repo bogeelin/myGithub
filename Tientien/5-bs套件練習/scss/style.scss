@@ -16,7 +16,7 @@ img {
     &::before {
         content: '';
         position: absolute;
-        left: 8.2rem;
+        left: 80rem;
         bottom: 1.6rem;
         background-color: map-get($color , dark);
         height: 8px;
@@ -48,7 +48,7 @@ img {
 
 // 同張圖片遮色片
 .mask-new {
-    mask-image: url(/images/mask.svg);
+    mask-image: url(../images/mask.svg);
     mask-position: center;
     mask-repeat: no-repeat;
 }
@@ -105,6 +105,5 @@ img {
             opacity: 0;
             transition: .4s;
         }
-
     }
 }

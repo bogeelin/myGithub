@@ -14,7 +14,7 @@ img {
 .title::before {
   content: "";
   position: absolute;
-  left: 8.2rem;
+  left: 80rem;
   bottom: 1.6rem;
   background-color: #212529;
   height: 8px;
@@ -38,7 +38,7 @@ img {
 }
 
 .mask-new {
-  mask-image: url(/images/mask.svg);
+  mask-image: url(../images/mask.svg);
   mask-position: center;
   mask-repeat: no-repeat;
 }
