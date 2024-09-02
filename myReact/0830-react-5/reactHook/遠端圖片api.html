@@ -10,6 +10,9 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 非同步讀取資料的套件 => axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 </head>
 
 <body class="bg-lighter">
@@ -46,17 +49,34 @@
                             />
                         </div>
                     }
+                    // 建立卡片元件
+                    const Card = ({ item }) => {
+                        return (
+                            <div className="card">
+                                <img
+                                    src={item.urls.regular}
+                                    className="card-img-top img_cover"
+                                    alt="..."
+                                    height="400"
+                                    width="100%"
+                                    object-fit='cover'
+                                />
+                            </div>
+                        )
+                    }
+
                     const App = () => {
                         console.log(1);
                         const [filterString, setFilterString] = useState('food');
-                        //建立列表用陣列
-
+                        // #3a 建立列表用陣列
+                        const[jsonData, setJsonData] = useState([]);
 
                         const onSearchHandler = (e) => {
                             setFilterString(e.target.value);
                         }
 
                         // #1 建立非同步方法時，會因為渲染的關係不斷重複觸發 async:非同步 await:等一下
+                        // 此方法會造成限定次數很被用完
                         // const getPhotos = async () => {
                         //     //測試是否成功連到api
                         //     // console.log(`${api}?client_id=${accessKey}&query='food`);
@@ -77,32 +97,24 @@
                                 console.log(result);
 
                                 //#3b 更新列表 => 將發出請求的結果更新到列表陣列
-                                setJsonData(result,)
+                                setJsonData(result.data.results);
                             }
                             getPhotos();
-
-                        }, []);
+                        }, []);  //空陣列時，只會在初始化被執行
 
                         return (<div>
                             {console.log(2)}
                             <SearchBox onSearchHandler={onSearchHandler} filterString={filterString} />
-                            
+
                             {/* 將陣列資料渲染到畫面上 */}
                             {/* 使用bootstrap建立一個一列二欄的格線系統 */}
                             <div className="row row-cols-2 g-3">
                                 {
-                                    jsonData.map(() => {
+                                    jsonData.map((item) => {
                                         return (
                                             <div className="col" key={item.id}>
-                                                <div className="card">
-                                                    <img
-                                                        src={item.urls.regular}
-                                                        className="card-img-top"
-                                                        height="400"
-                                                        width="100%"
-                                                        object-fit='cover'
-                                                    />
-                                                </div>
+                                                {/* 呼叫卡片元件 */}
+                                                <Card item={item} />
                                             </div>
                                         )
                                     })
