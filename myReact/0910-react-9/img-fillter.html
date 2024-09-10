@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React 圖片篩選</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #wrapper {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        #filterBtn {
+            padding-bottom: 30px;
+        }
+
+        #filterBtn a {
+            background-color: rgb(178, 178, 178);
+            border-radius: 30px;
+            margin: 0 10px;
+            padding: 5px 30px;
+        }
+
+        #filterBtn a.active {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        #filterList ul {
+            width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #filterList ul li {
+            width: 150px;
+            float: left;
+            margin: 5px;
+            list-style: none;
+        }
+    </style>
+
+    <!-- 步驟1:載入React babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+        function App() {
+            useEffect(() => {
+                // 撰寫jQuery
+                $(function () {
+                    // 變數宣告 : 取得所有按鈕
+                    let setFilter = $('#filterBtn');
+                    // 按鈕中的超連結元素
+                    let filterBtn = setFilter.find('a');
+                    // 取得all按鈕(預設選取狀態)
+                    let btnAll = $('.allItem');
+                    // 取得所有列表中的元素
+                    let setList = $('#filterList');
+                    // 取得列表中的li
+                    let filterList = setList.find('li');
+                    // 當任一按鈕按下左鍵時
+                    filterBtn.click(function () {
+                        // console.log($(this).attr('class'));
+                        // 檢查是否為"被點選狀態"，否才執行
+                        if (!($(this).hasClass('active'))) {
+                            // 取出類別名稱給filterClass變數
+                            let filterClass = $(this).attr('class');
+
+                            // 使用each()方法，篩選列表中一樣的類別名稱
+                            filterList.each(function () {
+                                // 檢查li類別名稱是否為被篩選的名稱
+                                if ($(this).hasClass(filterClass)) {
+                                    // 有找到
+                                    $(this).css({ display: 'block' });
+                                } else {
+                                    // 沒找到
+                                    $(this).css({ display: 'none' });
+                                }
+                            });
+
+                            // 清除所有按鈕上的active
+                            filterBtn.removeClass('active');
+                            // 將被點選的超連結加上active
+                            $(this).addClass('active');
+                        }
+                    });
+
+                    // 全部顯示
+                    btnAll.click(function(){
+                        filterList.each(function(){
+                            $(this).css({ display: 'block' });
+                        });
+                    });
+                    // 載入頁面時，讓all按鈕為點選狀態
+                    btnAll.click();
+                });
+            }, []);
+
+            return (
+                <>
+                    <div id="wrapper" >
+                        {/* 按鈕區 */}
+                        <div id="filterBtn">
+                            <a href="#" className="allItem">ALL</a>
+                            <a href="#" className="cats">CATS</a>
+                            <a href="#" className="food">FOOD</a>
+                            <a href="#" className="view">VIEW</a>
+                        </div>
+
+                        {/* 圖片區 */}
+                        <div id="filterList">
+                            <ul>
+                                <li className="view"><img src="./images/view1.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats1.jpg" alt="" /></li>
+                                <li className="view"><img src="./images/view2.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats2.jpg" alt="" /></li>
+                                <li className="view"><img src="./images/view4.jpg" alt="" /></li>
+                                <li className="view"><img src="./images/view3.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats3.jpg" alt="" /></li>
+                                <li className="view"><img src="./images/view4.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats4.jpg" alt="" /></li>
+                                <li className="food"><img src="./images/food1.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats5.jpg" alt="" /></li>
+                                <li className="food"><img src="./images/food2.jpg" alt="" /></li>
+                                <li className="cats"><img src="./images/cats6.jpg" alt="" /></li>
+                                <li className="food"><img src="./images/food3.jpg" alt="" /></li>
+                                <li className="food"><img src="./images/food4.jpg" alt="" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </>
+            )
+        }
+
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />);
+    </script>
+
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+</body>
+
+</html>
