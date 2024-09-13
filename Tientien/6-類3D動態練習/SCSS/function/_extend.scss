@@ -1,0 +1,10 @@
+@use '../variables' as *;
+// 需要另外匯入變數檔案
+// @extend繼承的語法會加在use檔案之後,css語法最上方
+
+// 垂直置中
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
